@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src cdn.example.com;"> -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://localhost:3000/; style-src 'self' 'unsafe-inline'; img-src http://assets.clear.in; script-src 'self' 'unsafe-inline' http://localhost:3000/;"> -->
+  <title>Playground</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <h1>Welcome to the Playground!</h1>
+  <h4 id="username"></h4>
+  <!--Cookies-->
+  <button id="fetch-btn-cookie" type="button">Set Cookie</button>
+  <!--Fetch Methods-->
+  <button id="fetch-btn-get" type="button">Get Some Data</button>
+  <button id="fetch-btn-post" type="button">Post Some Data</button>
+  <button id="fetch-btn-put" type="button">Put Some Data</button>
+  <button id="fetch-btn-delete" type="button">Delete Some Data</button>
+  <button id="fetch-btn-head" type="button">Head Methods</button>
+  <button id="fetch-btn-size" type="button">Test Req Size Button</button>
+  <div id="content" style="border: 1px solid black; height: auto; width: 90vh; margin-top: 40px;">
+  </div>
+  <!--Abort Controller-->
+  <h1>Abort requests (Abort Controller)</h1>
+  <div>
+    <button onclick="beginFetching();">
+      Begin
+  </button>
+  <button onclick="abortFetching();">
+      Abort
+  </button>
+  </div>
+  <!--CSP Demo-->
+  <h1>CSP Demo</h1>
+  <button id="get-img-script" type="button">Get Image</button>
+  <div id="csp-demo-content"></div>
+  <script src="./js/script.js" defer></script>
+</body>
+</html>
