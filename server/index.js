@@ -80,9 +80,11 @@ app.put('/update/data/:id', async (req, res) => {
     const rawData = await fs.readFile(filePath);
     let data = JSON.parse(rawData);
 
+    console.log(req.params, 'prasun');
+
     // Extract the ID from the request parameters
     const idToUpdate = parseInt(req.params.id);
-
+    console.log(data, 'prasun data');
     // Find the entry in data.json with the specified ID
     const entryToUpdate = data.find((entry) => entry.id === idToUpdate);
 
