@@ -38,6 +38,8 @@ cookieBtn.addEventListener('click', (e) => {
 let getButton = document.getElementById('fetch-btn-get');
 
 const renderData = (data) => {
+    console.log(data, renderData);
+    console.log(data, 'renderData');
     let containerEle = document.getElementById('content');
     containerEle.innerHTML = '';
     data.forEach(ele => {
@@ -87,10 +89,10 @@ let putButton = document.getElementById('fetch-btn-put');
 
 putButton.addEventListener('click', (e) => {
     e.preventDefault();
-    fetch('http://localhost:3000/update/data/1', { ...commonConfig, method: 'PUT', body: JSON.stringify({
+    fetch('http://localhost:3000/update/data/2', { ...commonConfig, method: 'PUT', body: JSON.stringify({
         "userId": 1,
-        "id": 1,
-        "title": "udpated title 3",
+        "id": 2,
+        "title": "quis ut nam",
         "completed": false
       }) })
       .then((res) => res.json())
@@ -120,7 +122,8 @@ let headButton = document.getElementById('fetch-btn-head');
 // const resourceUrl = 'https://images.pexels.com/photos/18016273/pexels-photo-18016273/free-photo-of-neon-text-glowing-against-a-dark-background.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2';
 
 headButton.addEventListener('click', (e) => {
-    fetch('https://media.gettyimages.com/id/1807510851/photo/lovers-looking-for-directions.jpg?s=2048x2048&w=gi&k=20&c=-upG76gs-gS7RDuxnjCVAHCmiLeGyIn_-LaFyOq9JIY=', { ...commonConfig, method: 'HEAD', mode: 'no-cors' });
+    fetch('https://images.pexels.com/photos/29399294/pexels-photo-29399294/free-photo-of-serene-winter-landscape-with-snowy-mountains.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        { ...commonConfig, method: 'HEAD', mode: 'no-cors' });
 });
 
 //OPTIONS
@@ -190,3 +193,40 @@ requsetSizeButton.addEventListener('click', (e) => {
             document.getElementById('csp-demo-content').innerHTML = `<p>${res}</p>`;
         });
     });
+
+
+
+
+    // ---------------- toggle Theme ----------------
+
+
+    // document.addEventListener('DOMContentLoaded', async () => {
+    //     try {
+    //         let toggleLight = document.getElementById('light');
+    //         let tohggleDark = document.getElementById('dark');
+
+    //         if(sessionStorage.getItem('theme')) {
+    //             if(sessionStorage.getItem('theme') === 'dark') {
+    //                 document.body.style.backgroundColor = 'black';
+    //                 document.body.style.color = 'white';
+    //             } else {
+    //                 document.body.style.backgroundColor = 'white';
+    //                 document.body.style.color = 'black';
+    //             }
+    //         }
+        
+    //         toggleLight.addEventListener('click', (e) => {
+    //             document.body.style.backgroundColor = 'white';
+    //             document.body.style.color = 'black';
+    //             sessionStorage.setItem('theme', 'light');
+    //         });
+        
+    //         tohggleDark.addEventListener('click', (e) => {
+    //             document.body.style.backgroundColor = 'black';
+    //             document.body.style.color = 'white';
+    //             sessionStorage.setItem('theme', 'dark');
+    //         });
+    //     } catch (e) {
+    //         console.error('Error toggling theme:', e);
+    //     }
+    // });
